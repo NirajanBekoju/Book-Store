@@ -1,5 +1,5 @@
-# BookStore
-Models
+# BookStore #
+### Models ###
 1. Book
 	- Book Title
 	- Author
@@ -13,11 +13,15 @@ Models
 
 2. Inquiry(Buy Now)
 	- Name
-	- Email
-	- Address
+	- Email Address
+	- Book(ID)
 	- Short Message
 	- Payment Method(Modified)
-	- Book Description(ID)
+		- Cash
+		- ESewa
+		- ConnectIPS
+		- Khalti
+	
 
 3. Contact(Form)
 	- Name
@@ -26,7 +30,7 @@ Models
 	- Message
 	- Captcha(Modified)
 	
-Views
+### Views ###
 1. Book
 	- Listing of all books(Book)
 	- Listing of single book(Book Detail)
@@ -36,6 +40,9 @@ Views
 		- Title (Keyword)
 		- Author (Keyword)
 		- Category (Choices)
-		- Price Range(Choices)
+		- Price Range(Choices) in the range of 1000
 		- Keywords (Description)
+
+2. Inquiry(Buy Now)
+	- Inquiry Form
 
