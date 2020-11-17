@@ -1,9 +1,13 @@
 # BookStore
+Models
 1. Book
 	- Book Title
-	- Book Writer
+	- Author
 	- Category
+	- Image
+	- Description
 	- Price
+	- Is_published
 	- Created Date
 	- Updated Date
 
@@ -22,3 +26,16 @@
 	- Message
 	- Captcha(Modified)
 	
+Views
+1. Book
+	- Listing of all books(Book)
+	- Listing of single book(Book Detail)
+	- Listing By Choice(Modified) ====> Search View(Filter View)
+	
+	Search By:
+		- Title (Keyword)
+		- Author (Keyword)
+		- Category (Choices)
+		- Price Range(Choices)
+		- Keywords (Description)
+
