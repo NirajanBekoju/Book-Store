@@ -14,12 +14,17 @@ class Book(models.Model):
         History = 'History'
         Other = 'Other'
 
-    title = models.CharField(max_length=50, unique=True)
-    author = models.CharField(max_length=50)
-    category = models.CharField(max_length=20, choices=BookCategory.choices, default=BookCategory.Other)
-    image = models.ImageField(upload_to='photos/%Y/%m/%d/')
-    description = models.TextField()
-    price = models.IntegerField()
+    title = models.CharField(max_length=50, unique=True, blank=False)
+    author = models.CharField(max_length=50, blank=False)
+    category = models.CharField(
+        max_length=20, 
+        choices=BookCategory.choices, 
+        default=BookCategory.Other,
+        blank=False
+        )
+    image = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=False)
+    description = models.TextField(blank=False)
+    price = models.IntegerField(blank=False)
     is_published = models.BooleanField(default=True)
     created_date = models.DateTimeField(default=now, blank=True)
 

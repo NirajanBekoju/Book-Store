@@ -9,11 +9,16 @@ class Inquiry(models.Model):
         connectIPS = 'ConnectIPS'
         khalti = 'Khalti'
     
-    name = models.CharField(max_length=50)
-    email = models.EmailField(max_length=50)
-    book_id = models.ForeignKey(Book, on_delete=models.DO_NOTHING)
-    message = models.TextField()
-    payment_method = models.CharField(max_length=20, choices=PaymentMethod.choices, default=PaymentMethod.cash)
+    name = models.CharField(max_length=50, null=False)
+    email = models.EmailField(max_length=50, null=False)
+    book_id = models.ForeignKey(Book, on_delete=models.DO_NOTHING, null=False)
+    message = models.TextField(blank=True)
+    payment_method = models.CharField(
+        max_length=20, 
+        choices=PaymentMethod.choices, 
+        default=PaymentMethod.cash,
+        null=False
+        )
     
 
 

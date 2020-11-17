@@ -22,11 +22,9 @@
 		- ConnectIPS
 		- Khalti
 	
-
 3. Contact(Form)
 	- Name
-	- Email
-	- Address
+	- Email Address
 	- Message
 	- Captcha(Modified)
 	
@@ -45,4 +43,7 @@
 
 2. Inquiry(Buy Now)
 	- Inquiry Form
+
+3. Contact
+	- Contact Form
 

@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'accounts',
     'book',
     'inquiry',
+    'contact'
 ]
 
 MIDDLEWARE = [
