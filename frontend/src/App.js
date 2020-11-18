@@ -9,7 +9,7 @@ import Share from './containers/Book/Share';
 
 import NotFound from './components/NotFound';
 
-import TopBar from './HOC/TobBar'
+import TopBar from './HOC/Layout'
 
 const App = () => (
   <Router>
