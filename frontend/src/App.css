@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700|Roboto:400,500,700&display=swap');
+/*--------Zoom Effect-------------*/
+/*
+#top, footer, #banner, #contact-form, #map{
+	width: 1349px;
+	margin: auto;
+}
+*/
+/*------General--------------*/
+body{
+	font-family: 'roboto', sans-serif;
+}
+.nostyle{
+	list-style: none;
+}
+a:hover{
+	text-decoration: none;
+}
+.title-1{
+	text-align: center;
+	color: #fff;
+	font-family: 'lato', sans-serif;
+	text-transform: uppercase;
+}
+.title-3{
+	text-align: center;
+	color: #eb600d;
+	font-family: 'lato', sans-serif;
+}
+.title-4{
+	color: #eb600d;
+	font-family: 'lato', sans-serif;
+}
+.text-white{
+	color: #fff!important;
+}
+.title-1-big{
+	text-align: center;
+	color: #fff;
+	font-family: 'lato', sans-serif;
+	font-weight: 700;
+}
+.title-1-big span{
+	color: #f09a3e;
+}
+/*-------Top-Header--------------*/
+#top{
+	background: #333242;
+	color: #9e9e98;
+	font-size: 14px;
+}
+#top .nostyle li{
+	display: inline;
+}
+#top a{
+	color: #9e9e98;
+}
+#top ul{
+	padding: 0;
+	margin: 0;
+}
+.right-top a i:hover, .left-top ul li a:hover{
+	color: #ddd!important;
+}
+/*------End of top Header-----------------*/
+/*--------Banner-Navigation bar and tite----*/
+#banner{
+	height: 500px;
+	background: url(./assets/images/banner.png);
+	background-size: cover; 
+}
+nav{
+	transition: 0.9s;
+	z-index: 10000!important;
+}
+.navbar-light .navbar-nav .nav-link {
+    color: #ef8930 !important
+}
+.navbar-light .navbar-nav .nav-link:hover {
+    color: yellow;
+}
+.navbar-light .navbar-nav .current {
+   	color: #efd130 !important
+}
+.dropdown-menu{
+	background: #333242!important;
+}
+.dropdown-item{
+	color: #fff!important;
+}
+.dropdown-item:hover{
+	background: transparent!important;
+	color: #007bff!important;
+}
+.title-info{
+	text-align: center;
+	color: #f4a306;
+	font-size: 20px;
+}
+.title-info h1{
+	padding-top: 0px;
+}
+.search-bar{
+	border-radius: 4.25rem;
+	padding-left: 15px;
+}
+.search-button{
+	padding-left: 30px;
+	padding-right: 30px;
+}
+#banner p{
+	color: white;
+	font-size: 14px;
+}
+/*--End of Banner-Navigation bar and tite----*/
+/*-------Featured Books---------*/
+.gallery-container{
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: center;
+}
+.gallery-container .image{
+	flex: 20%;
+	height: 300px;
+	overflow: hidden;
+	transition: 0.9s;
+	cursor: pointer;
+}
+.gallery-container .image img{
+	width: 100%;
+	height: 100%;
+}
+.gallery-container .image:hover{
+	transform: scale(1.09);
+	box-shadow: 0px 0px 40px #333;
+}
+/*----End of Featured Books-------*/
+/*------Subject Wise Books----------*/
+.view-all {
+    position: relative;
+    left: 88%;
+    top: -35px;
+    z-index: 9999;
+}
+.card{
+	cursor: pointer;
+}
+#subject .card-title{
+	min-height: 50px;
+}
+#subject .card-text{
+	min-height: 50px;
+}
+#subject .card{
+	min-height: 550px;
+}
+/*----End of Subject wise books---------*/
+/*------Side Panel----------*/
+.side-panel{
+	background: #f5f5f5;
+	padding-left: 0;
+	padding-right: 0;
+}
+/*-----------Form-------------*/
+#subject form{
+	background: #0d98eb;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.side-panel .form-control{
+	width: 90%;
+	margin: auto;
+}
+form input{
+	margin: 5px 0;
+}
+form input[type="submit"]{
+	background: #28a745;
+	color: white;
+	border: none;
+}
+/*-----------Notes--------*/
+.notes{
+	padding: 20px 15px;
+}
+.offer-btn{
+	background: #ec600d!important;
+	width: 100%;
+	border: 2px solid #ec600d!important;
+	font-weight: 700;
+	font-family: 'lato', sans-serif;
+}
+.offer-btn:hover{
+	color: #ec600d;
+	background: transparent!important;
+	border: 2px solid #ec600d!important;
+}
+.notes img{
+	margin: auto;
+}
+/*--------End of Side Panel-----*/
+/*-------Footer---------------*/
+footer{
+	background: #333242;
+	color: white!important;
+}
+footer a{
+	color: #fff!important;
+}
+footer .contact p, footer .terms p{
+	padding-left: 15px;
+}
+/*----End of footer-------------*/
+/*-------------Contact Us Page----------*/
+.bg-nav-contact{
+	background: transparent!important;
+}
+.bg-nav-contact .nav-item .current{
+	color: #000!important;
+}
+#contact-form{
+	background: #333c4e;
+}
+.contact-form-container .help-info{
+	font-family: 'roboto', sans-serif;
+	font-size: 20px;
+	color: white;
+	text-align: center;
+}
+.contact-form-container form, .agreement-text , .contact-form-container p{
+	color: #d5d5d5;
+}
+.detail-contact-container .title-yellowish{
+	color: #f09a3e!important;
+	font-family: 'lato', sans-serif;
+	font-weight: 700;
+}
+.detail-contact-container .detail-sub-info{
+	color: #646a71;
+	font-size: 20px;
+}
+.detail-info .title-info-contact{
+	font-size: 24px;
+	color: #fff;
+}
+.detail-info i, .detail-info .info-contact{
+	color: #f09a3e;
+	font-size: 20px;
+}
+/*------End of contact.html--------------*/
+
+
+/*------------Subject.html------------*/
+#subject-choice{
+	background: #f0f0f0;
+	padding-top: 25px;
+	padding-left: 25px;
+	padding-bottom: 25px;
+}
+.title-subject-page{
+	color: #ea5b0c;
+	font-size: 24px;
+}
+.subject-title{
+	color: #555;
+}
+#subject-choice .card{
+	margin-bottom: 15px;
+	min-height: 555px;
+}
+/*-------End of Subject.html---------------*/
+/*--------Log in Page------------*/
+#login-page{
+	width: 100%;
+	height: 100vh;
+	background: #333242;
+}
+.login-form{
+	width: 100%;
+	min-height: 400px;
+	background: #fff;
+	border-radius: 15px;
+	margin-top: 100px;
+}
+.forgot-password:hover{
+	color: #2098d1!important;
+}
+.media-sign{
+	padding-top: 34px;
+}
+.media-sign .form-control{
+	border-radius: 0!important;
+	color: #fff;
+}
+.media-sign .facebook{
+	background: #3d5995;
+}
+.media-sign .gmail{
+	background: #d74a39;
+}
+.media-sign .twitter{
+	background: #45b0e4;
+}
+/*---------End of log in page-----------*/
