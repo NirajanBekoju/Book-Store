@@ -25,6 +25,7 @@ class Book(models.Model):
     image = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=False)
     description = models.TextField(blank=False)
     price = models.IntegerField(blank=False)
+    is_featured = models.BooleanField(default=False)
     is_published = models.BooleanField(default=True)
     created_date = models.DateTimeField(default=now, blank=True)
 

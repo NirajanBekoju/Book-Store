@@ -8,8 +8,10 @@
 	- Description
 	- Price
 	- Is_published
+	- Is_featured ======> (Modified)
 	- Created Date
 	- Updated Date
+	
 
 2. Inquiry(Buy Now)
 	- Name

@@ -3,7 +3,7 @@ from rest_framework.generics import ListAPIView, RetrieveAPIView
 from rest_framework.views import APIView
 from rest_framework import permissions
 from .models import Book
-from .serializers import BookSerializer, BookDetailSerializer
+from .serializers import BookSerializer, BookDetailSerializer, FeaturedBookSerializer
 
 class ListingsBookView(ListAPIView):
     queryset = Book.objects.order_by('-created_date').filter(is_published=True)
@@ -11,10 +11,18 @@ class ListingsBookView(ListAPIView):
     serializer_class = BookSerializer
     lookup_field = 'id'
 
+
+class FeaturedBookView(ListAPIView):
+    queryset = Book.objects.order_by('-created_date').filter(is_featured=True)
+    permission_classes=(permissions.AllowAny, )
+    serializer_class = FeaturedBookSerializer
+    lookup_field = 'id'
+
 class ListingBookDetailView(RetrieveAPIView):
     queryset = Book.objects.order_by('-created_date').filter(is_published=True)
     serializer_class = BookDetailSerializer
     lookup_field = 'id'
+
 
 class SearchView(APIView):
     permission_classes = (permissions.AllowAny, )
