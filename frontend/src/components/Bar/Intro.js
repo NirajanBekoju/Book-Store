@@ -13,7 +13,7 @@ function Intro() {
                     <input type="text" class="form-control search-bar" placeholder="Search Books and Notes..." />
                 </div>
                 <div class="col-md-1 col-sm-3 col-xs-3">
-                    <Link href="" class="btn btn-success search-bar search-button">Search</Link>
+                    <Link to="" class="btn btn-success search-bar search-button">Search</Link>
                 </div>
                 </div>
                 <div class="row">

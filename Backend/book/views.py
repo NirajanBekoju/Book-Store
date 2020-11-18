@@ -4,13 +4,19 @@ from rest_framework.views import APIView
 from rest_framework import permissions
 from .models import Book
 from .serializers import BookSerializer, BookDetailSerializer, FeaturedBookSerializer
+from rest_framework.pagination import PageNumberPagination
 
-class ListingsBookView(ListAPIView):
+class StandardResultsSetPagination(PageNumberPagination):
+    page_size = 4
+    page_size_query_param = 'page_size'
+    max_page_size = 1000
+
+class ListingsBookView(ListAPIView, PageNumberPagination):
     queryset = Book.objects.order_by('-created_date').filter(is_published=True)
     permission_classes = (permissions.AllowAny, )
     serializer_class = BookSerializer
     lookup_field = 'id'
-
+    pagination_class = StandardResultsSetPagination
 
 class FeaturedBookView(ListAPIView):
     queryset = Book.objects.order_by('-created_date').filter(is_featured=True)
