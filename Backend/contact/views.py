@@ -15,7 +15,8 @@ class ContactCreateView(APIView):
                     name=data['name'], 
                     email=data['email'], 
                     message=data['message'], 
-                    aggrement=True)
+                    aggrement=True
+                    )
                 contact.save()
                 return Response({'success', 'Message Sent Successfully'})
             return Response({'aggrement': 'Please confirm the aggrement policy'})

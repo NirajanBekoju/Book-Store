@@ -13,6 +13,7 @@ function BookDetail(props) {
     const handleShow = () => setShow(true);
 
     useEffect(() => {
+      window.scrollTo(0,0)
         const id = props.match.params.id;
         axios.get(`http://127.0.0.1:8000/api/listings/${id}`)
         .then(res => {
@@ -29,7 +30,7 @@ function BookDetail(props) {
         <section id="subject-choice">
           <div className="container">
             <Book book={book} handleShow={handleShow}/>
-            <BuyModal show={show} handleClose={handleClose} />
+            <BuyModal show={show} handleClose={handleClose} id={book.id} title={book.title} />
           </div>
         </section>
       </React.Fragment>
