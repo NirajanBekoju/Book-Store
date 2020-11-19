@@ -19,3 +19,10 @@ export const priceOptions = [
     'Any'
 ]
 
+export const paymentMethods = [
+    "Cash",
+    "ESewa",
+    "ConnectIPS",
+    "Khalti"
+]
+

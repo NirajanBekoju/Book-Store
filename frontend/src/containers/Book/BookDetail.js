@@ -1,9 +1,16 @@
 import React, {useState, useEffect} from 'react'
 import NavBar from '../../components/NavBar'
 import axios from 'axios'
+import Book from '../../components/BookDetail/Book'
+import BuyModal from '../../components/BookDetail/BuyModal'
 
 function BookDetail(props) {
     const [book, setBook] = useState({})
+
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     useEffect(() => {
         const id = props.match.params.id;
@@ -21,24 +28,8 @@ function BookDetail(props) {
         <NavBar />
         <section id="subject-choice">
           <div className="container">
-            <div className="row">
-              <div className="offset-md-1 col-md-4">
-                <img src={book.image} alt="Book" className="img-fluid" />
-              </div>
-              <div className="col-md-6">
-                <h3>{book.title}</h3>
-                <p>
-                  <strong>
-                    Author : {book.author} <br />
-                    Category : {book.category}
-                    <br />
-                    Price : {book.price}
-                  </strong>
-                </p>
-                <p style={{ textAlign: "justify" }}>{book.description}</p>
-                <button className="btn btn-success">Buy Now</button>
-              </div>
-            </div>
+            <Book book={book} handleShow={handleShow}/>
+            <BuyModal show={show} handleClose={handleClose} />
           </div>
         </section>
       </React.Fragment>
