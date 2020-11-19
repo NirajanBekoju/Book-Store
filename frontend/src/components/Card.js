@@ -13,7 +13,7 @@ function Card({ listing }) {
             <p className="card-text">Writer: {listing.author}<br/>
             Category: {listing.category}<br/>
             <span className="price" style={priceStyle}>NRs. {listing.price}</span></p>
-            <Link to="#" className="btn btn-primary">Buy Now</Link>
+            <Link to={`/book/${listing.id}`} className="btn btn-primary">View Detail</Link>
           </div>
         </div>
     )

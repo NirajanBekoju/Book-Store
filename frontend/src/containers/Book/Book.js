@@ -3,6 +3,7 @@ import axios from 'axios'
 import Card from '../../components/Card'
 import NavBar from '../../components/NavBar'
 import Pagination from '../../components/Pagination'
+import SearchBook from '../../components/SearchBook'
 
 function Book() {
     const [listings, setListings] = useState([])
@@ -106,6 +107,7 @@ function Book() {
         <NavBar />
         <section id="subject-choice">
           <div className="container">
+            <SearchBook setListings = {setListings} />
             {displayListings()}
             <Pagination
               itemsPerPage={itemsPerPage}
