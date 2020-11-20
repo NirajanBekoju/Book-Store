@@ -2,7 +2,7 @@ import React from 'react';
 import TopBar from '../components/Bar/TopBar';
 import Footer from '../components/Bar/Footer';
 
-const topBar = (props) => (
+const layout = (props) => (
     <div>
         <TopBar />
         {props.children}
@@ -10,4 +10,4 @@ const topBar = (props) => (
     </div>
 )
 
-export default topBar;
+export default layout;

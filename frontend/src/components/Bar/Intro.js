@@ -4,17 +4,15 @@ import { Link } from 'react-router-dom'
 function Intro() {
     return (
       <div
-        class="title-info pt-4 pb-2"
-        data-aos="zoom-in-up"
-        data-aos-duration="1500"
+        className="title-info pt-4 pb-2"
       >
-        <h1 class="title-1">Siddhartha Book Store</h1>
-        <span class="title-info">Buy and Share Books And Educate Yourself</span>
-        <div class="searchBar">
-          <div class="container">
-            <div class="row">
-              <div class="offset-md-2 col-md-8">
-                <p class="pt-4">
+        <h1 className="title-1">Siddhartha Book Store</h1>
+        <span className="title-info">Buy and Share Books And Educate Yourself</span>
+        <div className="searchBar">
+          <div className="container">
+            <div className="row">
+              <div className="offset-md-2 col-md-8">
+                <p className="pt-4">
                   Lorem Ipsum is simply dummy text of the printing and
                   typesetting industry. Lorem Ipsum has been the industry's
                   standard dummy text ever since the 1500s, when an unknown

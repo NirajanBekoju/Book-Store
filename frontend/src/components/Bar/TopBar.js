@@ -10,8 +10,8 @@ function TopBar() {
               <div className="col-md-8 left-top">
                 <ul className="nostyle">
                   <li>
-                    <Link
-                      to="telto:01-5122035"
+                    <a
+                      href="telto:01-5122035"
                       id="phone"
                       data-toggle="tooltip"
                       data-placement="top"
@@ -19,11 +19,11 @@ function TopBar() {
                     >
                       <i className="fa fa-phone pr-2" aria-hidden="true"></i>
                       01-5122035
-                    </Link>
+                    </a>
                   </li>
                   <li>
-                    <Link
-                      to="telto:9843965781"
+                    <a
+                      href="telto:9843965781"
                       id="mobile"
                       data-toggle="tooltip"
                       data-placement="top"
@@ -31,11 +31,11 @@ function TopBar() {
                     >
                       <i className="fa fa-mobile pr-2 pl-2" aria-hidden="true"></i>
                       9843965781
-                    </Link>
+                    </a>
                   </li>
                   <li>
-                    <Link
-                      to="mailto:nirajan.bekoju@gmail.com"
+                    <a
+                      href="mailto:nirajan.bekoju@gmail.com"
                       id="email"
                       data-toggle="tooltip"
                       data-placement="top"
@@ -46,7 +46,7 @@ function TopBar() {
                         aria-hidden="true"
                       ></i>
                       info@siddharthabookstore.com
-                    </Link>
+                    </a>
                   </li>
                 </ul>
               </div>

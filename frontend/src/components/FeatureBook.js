@@ -6,7 +6,7 @@ function FeatureBook({ listings }) {
         let results = []
         listings.map((listing) => {
             return results.push(
-                <div className="image">
+                <div className="image" key={listing.id}>
                     <Link to={`/book/${listing.id}`}>
                         <img src={listing.image} alt="Featured Book" />
                     </Link>    
@@ -19,10 +19,10 @@ function FeatureBook({ listings }) {
     return (
         <section id="featured-book" className='mb-4'>
             <div className="container">
-                <h3 class="title-3 pt-3 pb-3">
+                <h3 className="title-3 pt-3 pb-3">
                     Featured Books
                 </h3>
-                <div class="gallery-container">
+                <div className="gallery-container">
                     {getFeaturedListings()}
                 </div>
             </div>

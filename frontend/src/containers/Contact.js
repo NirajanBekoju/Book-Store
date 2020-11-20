@@ -2,7 +2,7 @@ import React from 'react'
 import NavBar from '../components/NavBar'
 import ContactForm from '../components/Contact/ContactForm'
 import ContactDetail from '../components/Contact/ContactDetail'
-import Map from '../components/Contact/Map'
+// import Map from '../components/Contact/Map'
 
 function Contact() {
     return (
@@ -16,7 +16,7 @@ function Contact() {
                     </div>
                 </div>
             </section>
-            <Map />
+            {/* <Map /> */}
         </React.Fragment>
     )
 }

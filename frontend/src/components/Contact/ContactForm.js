@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from 'axios';
+import { setAlert } from '../../redux/alert/AlertAction'
+import { connect } from 'react-redux';
 
-function ContactForm() {
+function ContactForm({ setAlert }) {
     const style = {
         cursor: "pointer"
     }
@@ -50,6 +52,8 @@ function ContactForm() {
             });
         }
         else{
+          window.scrollTo(0,0)
+          setAlert("Please agree the policy", "danger")
 
         }
     }
@@ -107,4 +111,11 @@ function ContactForm() {
   );
 }
 
-export default ContactForm;
+const mapDispatchToProps = dispatch => {
+  return {
+    setAlert: (msg, alertType) => dispatch(setAlert(msg, alertType))
+  }
+}
+
+
+export default connect(null, mapDispatchToProps)(ContactForm);

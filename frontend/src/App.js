@@ -9,21 +9,26 @@ import BookDetail from './containers/Book/BookDetail';
 
 import NotFound from './components/NotFound';
 
-import TopBar from './HOC/Layout'
+import Layout from './HOC/Layout'
+
+import {Provider} from 'react-redux';
+import store from './redux/Store';
 
 const App = () => (
-  <Router>
-    <TopBar>
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/about" component={About} />
-        <Route exact path="/book" component={Book} />
-        <Route exact path="/book/:id" component={BookDetail} />
-        <Route exact path="/contact" component={Contact} />
-        <Route component={NotFound} />
-      </Switch>
-    </TopBar>
-  </Router>
+  <Provider store={store}>
+    <Router>
+      <Layout>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/about" component={About} />
+          <Route exact path="/book" component={Book} />
+          <Route exact path="/book/:id" component={BookDetail} />
+          <Route exact path="/contact" component={Contact} />
+          <Route component={NotFound} />
+        </Switch>
+      </Layout>
+    </Router>
+  </Provider>
 );
 
 export default App;
