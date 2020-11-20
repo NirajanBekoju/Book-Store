@@ -33,21 +33,25 @@ function ContactForm() {
     }
 
     const handleSubmit = (e) => {
-        console.log("submitted")
         e.preventDefault();
-        axios
-          .post("http://127.0.0.1:8000/api/contact/", {
-            name,
-            email,
-            message,
-            aggrement,
-          })
-          .then((res) => {
-            window.scrollTo(0, 0);
-          })
-          .catch((err) => {
-            window.scrollTo(0, 0);
-          });
+        if(aggrement === "on"){
+          axios
+            .post("http://127.0.0.1:8000/api/contact/", {
+              name,
+              email,
+              message,
+              aggrement,
+            })
+            .then((res) => {
+              window.scrollTo(0, 0);
+            })
+            .catch((err) => {
+              window.scrollTo(0, 0);
+            });
+        }
+        else{
+
+        }
     }
 
   return (

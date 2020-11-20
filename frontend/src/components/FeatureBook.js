@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "react-router-dom"
 
 function FeatureBook({ listings }) {
     const getFeaturedListings = () => {
@@ -6,7 +7,9 @@ function FeatureBook({ listings }) {
         listings.map((listing) => {
             return results.push(
                 <div className="image">
-                    <img src={listing.image} alt="Featured Book" />
+                    <Link to={`/book/${listing.id}`}>
+                        <img src={listing.image} alt="Featured Book" />
+                    </Link>    
                 </div>
             )
         })

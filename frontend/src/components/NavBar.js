@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink  } from "react-router-dom";
 import logo from "../assets/images/logo.png";
 
 const NavBar = () => {
@@ -29,24 +29,36 @@ const NavBar = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
-                <Link className="nav-link current" to="/">
+                <NavLink className="nav-link" to="/">
                   Home <span className="sr-only">(current)</span>
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/book">
+                <NavLink
+                  className="nav-link"
+                  activeClassName="current"
+                  to="/book"
+                >
                   Subject
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/about">
+                <NavLink
+                  className="nav-link"
+                  activeClassName="current"
+                  to="/about"
+                >
                   About Us
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/contact">
+                <NavLink
+                  className="nav-link"
+                  activeClassName="current"
+                  to="/contact"
+                >
                   Contact Us
-                </Link>
+                </NavLink>
               </li>
             </ul>
           </div>
