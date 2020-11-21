@@ -2,9 +2,10 @@ import React, { useState } from 'react'
 import { Modal } from "react-bootstrap"
 import {paymentMethods} from '../Data'
 import axios from 'axios'
+import { setAlert } from '../../redux/alert/AlertAction'
+import { connect } from 'react-redux';
 
-function BuyModal({ show, handleClose, id, title }) {
-    // const [name, email, book_id, message, payment_method] 
+function BuyModal({ show, handleClose, id, title, setAlert }) {
     const book_id = id
     const [formData, setFormData] = useState({
         name: "",
@@ -22,11 +23,10 @@ function BuyModal({ show, handleClose, id, title }) {
     }
 
     const handleSubmit = (e) => {
-      console.log("Submitted")
       e.preventDefault();
       axios.defaults.headers = {
-        "Content-Type": "application/json"
-      }
+        "Content-Type": "application/json",
+      };
 
       axios.post("http://127.0.0.1:8000/api/inquiry/", {
         name,
@@ -35,13 +35,13 @@ function BuyModal({ show, handleClose, id, title }) {
         message,
         payment_method
       }).then(res => {
-        console.log(res);
+        setAlert(`${res.data.success}`, "success")
       })
       .catch(err => {
         console.log(err);
       })
-      handleClose();
       window.scrollTo(0,0);
+      handleClose();
     }
 
     return (
@@ -75,15 +75,6 @@ function BuyModal({ show, handleClose, id, title }) {
                   onChange={(e) => handleChange(e)}
                 />
               </div>
-              {/* <div className="form-group">
-                <input
-                  type="hidden"
-                  className="form-control"
-                  name="book_id"
-                  id="book"
-                  value={book_id}
-                />
-              </div> */}
               <div className="form-group">
                 <label htmlFor="message">Message</label>
                 <textarea
@@ -122,4 +113,10 @@ function BuyModal({ show, handleClose, id, title }) {
     );
 }
 
-export default BuyModal
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setAlert: (msg, alertType) => dispatch(setAlert(msg, alertType)),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(BuyModal)

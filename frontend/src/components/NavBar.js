@@ -40,7 +40,7 @@ const NavBar = () => {
                   activeClassName="current"
                   to="/book"
                 >
-                  Subject
+                  Books
                 </NavLink>
               </li>
               <li className="nav-item">

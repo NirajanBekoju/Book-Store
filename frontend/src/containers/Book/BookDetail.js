@@ -29,10 +29,15 @@ function BookDetail(props) {
         <NavBar />
         <section id="subject-choice">
           <div className="container">
-            <Book book={book} handleShow={handleShow}/>
-            <BuyModal show={show} handleClose={handleClose} id={book.id} title={book.title} />
+            <Book book={book} handleShow={handleShow} />
           </div>
         </section>
+        <BuyModal
+          show={show}
+          handleClose={handleClose}
+          id={book.id}
+          title={book.title}
+        />
       </React.Fragment>
     );
 }

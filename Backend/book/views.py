@@ -29,7 +29,6 @@ class ListingBookDetailView(RetrieveAPIView):
     serializer_class = BookDetailSerializer
     lookup_field = 'id'
 
-
 class SearchView(APIView):
     permission_classes = (permissions.AllowAny, )
     serializer_class = BookSerializer
@@ -37,10 +36,6 @@ class SearchView(APIView):
     def post(self, request, format=None):
         queryset = Book.objects.order_by('-created_date').filter(is_published=True)
         data = self.request.data
-
-        print("==============================")
-        print(data)
-        print("==============================")
 
         title = data['title']
         queryset = queryset.filter(title__icontains=title)

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from 'axios';
+
 import { setAlert } from '../../redux/alert/AlertAction'
 import { connect } from 'react-redux';
 
@@ -37,6 +38,10 @@ function ContactForm({ setAlert }) {
     const handleSubmit = (e) => {
         e.preventDefault();
         if(aggrement === "on"){
+           axios.defaults.headers = {
+             "Content-Type": "application/json",
+           };
+
           axios
             .post("http://127.0.0.1:8000/api/contact/", {
               name,
@@ -46,6 +51,15 @@ function ContactForm({ setAlert }) {
             })
             .then((res) => {
               window.scrollTo(0, 0);
+              if(res.data[0] === "success"){
+                setAlert("Message has been sent", "success")
+              }
+              else if(res.data[0] === "aggrement"){
+                setAlert("Please agree the policy", "danger")
+              }
+              else if(res.data[0] === "error"){
+                setAlert("Message Failed to sent", "danger")
+              }
             })
             .catch((err) => {
               window.scrollTo(0, 0);
@@ -59,6 +73,7 @@ function ContactForm({ setAlert }) {
     }
 
   return (
+    
     <div className="col-md-8 contact-form-container">
       <h1 className="title-1-big">
         Contact Us<span> Now</span>

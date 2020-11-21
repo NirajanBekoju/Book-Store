@@ -34,7 +34,7 @@ function SearchBook() {
     const handleSubmit = e => {
         e.preventDefault();
         axios.defaults.headers = {
-            "Content-Type": "application/json"
+          "Content-Type": "application/json",
         };
 
         axios.post("http://127.0.0.1:8000/api/listings/search", {

@@ -23,9 +23,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework',
     'corsheaders',
-    'phonenumber_field',
+    'rest_framework',
     'accounts',
     'book',
     'inquiry',
@@ -113,10 +112,11 @@ USE_TZ = True
 AUTH_USER_MODEL = 'accounts.Account'
 
 STATIC_URL = '/static/'
-STATICFILES_DIR = [
+STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'build/static')
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -129,5 +129,8 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 40
 }
 
-CORS_ORIGIN_ALLOW_ALL = True
+# CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000"
+]
 FILE_UPLOAD_PERMISSIONS = 0o640
