@@ -4,6 +4,8 @@ import axios from 'axios';
 
 import { setAlert } from '../../redux/alert/AlertAction'
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+
 import { getCookie } from '../../HelperFunctions'
 
 function ContactForm({ setAlert }) {
@@ -55,13 +57,15 @@ function ContactForm({ setAlert }) {
             })
             .then((res) => {
               window.scrollTo(0, 0);
-              if(res.data[0] === "success"){
+              console.log("From Response")
+              console.log(res);
+              if(res.data[1] === "success"){
                 setAlert("Message has been sent", "success")
               }
-              else if(res.data[0] === "aggrement"){
+              else if(res.data[1] === "aggrement"){
                 setAlert("Please agree the policy", "danger")
               }
-              else if(res.data[0] === "error"){
+              else if(res.data[1] === "error"){
                 setAlert("Message Failed to sent", "danger")
               }
             })
@@ -130,11 +134,9 @@ function ContactForm({ setAlert }) {
   );
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    setAlert: (msg, alertType) => dispatch(setAlert(msg, alertType))
-  }
+ContactForm.propTypes = {
+  setAlert: PropTypes.func.isRequired
 }
 
 
-export default connect(null, mapDispatchToProps)(ContactForm);
+export default connect(null, {setAlert})(ContactForm);

@@ -7,6 +7,10 @@ import Contact from './containers/Contact';
 import Book from './containers/Book/Book';
 import BookDetail from './containers/Book/BookDetail';
 
+import Login from "./containers/Account/Login";
+import SignUp from "./containers/Account/Signup";
+import UserDashboard from "./containers/Account/UserDashboard";
+
 import NotFound from './components/NotFound';
 
 import Layout from './HOC/Layout'
@@ -24,6 +28,9 @@ const App = () => (
           <Route exact path="/book" component={Book} />
           <Route exact path="/book/:id" component={BookDetail} />
           <Route exact path="/contact" component={Contact} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/signup" component={SignUp} />
+          <Route exact path="/dashboard" component={UserDashboard} />
           <Route component={NotFound} />
         </Switch>
       </Layout>

@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
-import { Modal } from "react-bootstrap"
 import {paymentMethods} from '../Data'
+import { Modal } from "react-bootstrap"
 import axios from 'axios'
+
 import { setAlert } from '../../redux/alert/AlertAction'
 import { connect } from 'react-redux';
 import { getCookie } from "../../HelperFunctions";
-
+import PropTypes from "prop-types";
 
 function BuyModal({ show, handleClose, id, title, setAlert }) {
   const csrftoken = getCookie("csrftoken");
@@ -115,10 +116,8 @@ function BuyModal({ show, handleClose, id, title, setAlert }) {
     );
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    setAlert: (msg, alertType) => dispatch(setAlert(msg, alertType)),
-  };
+BuyModal.propTypes = {
+  setAlert: PropTypes.func.isRequired,
 };
 
-export default connect(null, mapDispatchToProps)(BuyModal)
+export default connect(null, {setAlert})(BuyModal)

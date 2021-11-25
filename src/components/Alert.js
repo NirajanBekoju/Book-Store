@@ -1,46 +1,40 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { removeAlert } from "../redux/alert/AlertAction";
 
-const Alert = ({ alerts=null, removeAlert }) => {
-  const getAlert = () => {
+const Alert = ({ alerts }) => {
+  const displayAlert = () => {
     let result = []
-    if(alerts !== null && alerts.length > 0){
-      for(let i=0; i<alerts.length; i++){
+
+    if (alerts !== null){
+      if (alerts.length > 0){
+        alerts.map((alert) => (
         result.push(
-          <div key={alerts[i].id} className={`alert alert-${alerts[i].alertType}`}>
-            {alerts[i].msg}
-          </div>
-        );
-        setTimeout(() => {
-          removeAlert(alerts[i].id)
-        }, 3000);
+        <div key={alert.id} className={`alert alert-${alert.alertType}`}>
+          {alert.msg}
+        </div>
+        )
+      ));
       }
     }
-  
+
     return result;
   }
 
-  return(
+  return (
     <React.Fragment>
-      {getAlert()}
+      {displayAlert()}
     </React.Fragment>
   )
 }
+  
 
 Alert.propTypes = {
-  alerts: PropTypes.array,
+  alerts: PropTypes.array.isRequired,
 };
 
-const mapStateToProps = (state) => {
-  return {alerts: state}
-}
+const mapStateToProps = (state) => ({
+  alerts: state.alert,
+});
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    removeAlert: (id) => dispatch(removeAlert(id)),
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Alert);
+export default connect(mapStateToProps)(Alert);
