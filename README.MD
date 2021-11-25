@@ -1,4 +1,36 @@
 # BookStore #
+# To Run in your Local Machine
+**Clone the repository**
+```
+git clone https://github.com/NirajanBekoju/Book-Store
+```
+
+**Create a virtual environment and activate it**
+```
+virtualenv venv
+source ./venv/bin/activate
+```
+
+**Install all requirements from requirements.txt**
+```
+pip install -r requirements.txt
+```
+
+**Create a superuser**
+```
+python3 manage.py createsuperuser
+```
+
+**Build the React App**
+```
+npm run build
+```
+
+**Run Server**
+```
+python3 manage.py runserver
+```
+
 ### Models ###
 1. Book
 	- Book Title
